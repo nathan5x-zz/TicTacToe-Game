@@ -1,0 +1,213 @@
+/**
+  * CSS defaults to set all the initial styles for the elements
+  */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1;
+  color: #ccc; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/**
+ * Import required settings and mixins from other config scss files
+ */
+/**
+ * Style settings to define colors, sizes, fonts and others
+ */
+/**
+ * media-query mixins for responsive styles
+ */
+/**
+ * Custom CSS style for GameView Rendering
+ */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: #EFEFEF;
+  color: #00A8F2; }
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 10px 0;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1); }
+  @media only screen and (min-width: 321px) and (max-width: 480px) {
+    header {
+      padding: 5px 0; } }
+  header .game-status-header {
+    display: inline-block;
+    font-weight: normal;
+    position: relative;
+    float: right;
+    right: 30px; }
+    @media only screen and (min-width: 321px) and (max-width: 480px) {
+      header .game-status-header {
+        right: 10px; } }
+    header .game-status-header .button {
+      display: inline-block; }
+  header h2 {
+    margin: 0 0 0 50px;
+    display: inline-block;
+    color: #282C35; }
+    @media only screen and (min-width: 321px) and (max-width: 480px) {
+      header h2 {
+        margin: 0 0 0 10px; } }
+    header h2.appname {
+      margin-top: 20px;
+      margin-left: 30px; }
+  header h4 {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: 100;
+    font-size: 0.8em; }
+    header h4 span {
+      color: #282C35;
+      font-weight: 500; }
+
+/**
+ * Main game card styles
+ */
+.game-list {
+  margin: 100px;
+  color: #00A8F2;
+  text-align: center; }
+  @media only screen and (min-width: 321px) and (max-width: 480px) {
+    .game-list {
+      margin: 80px auto; } }
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .game-list {
+      margin: 60px auto; } }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .game-list {
+      margin: 80px auto; } }
+  .game-list .game-card {
+    text-align: left;
+    margin: 20px;
+    display: inline-block;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 2px 5px 0px #2a2e37;
+    -moz-box-shadow: 0px 2px 5px 0px #2a2e37;
+    box-shadow: 0px 2px 5px 0px #2a2e37; }
+    .game-list .game-card .game .row {
+      border-top: 5px solid #282C35;
+      height: 100px; }
+      @media only screen and (min-width: 321px) and (max-width: 480px) {
+        .game-list .game-card .game .row {
+          height: 120px; } }
+    .game-list .game-card .game .row:first-child {
+      border-top: none; }
+    .game-list .game-card .game .row .cell {
+      cursor: pointer;
+      display: inline-block;
+      height: inherit;
+      width: 100px;
+      border-right: 5px solid #282C35;
+      background-color: #FFFFFF;
+      transition: all 1s; }
+      @media only screen and (min-width: 321px) and (max-width: 480px) {
+        .game-list .game-card .game .row .cell {
+          width: 115px; } }
+      .game-list .game-card .game .row .cell:empty:hover {
+        background-color: #00A8F2; }
+      .game-list .game-card .game .row .cell svg {
+        display: block;
+        height: 64px;
+        width: 64px;
+        margin: 20% auto; }
+    .game-list .game-card .game .cell:last-child {
+      border-right: none; }
+    .game-list .game-card .game .game-info {
+      background-color: #282C35;
+      color: #FFFFFF;
+      width: inherit;
+      border-bottom: 1px solid #FFFFFF; }
+      .game-list .game-card .game .game-info h3 {
+        display: inline-block;
+        margin: 20px 25px;
+        font-size: 0.8em; }
+      .game-list .game-card .game .game-info .reset-button {
+        float: right;
+        display: inline-block; }
+    .game-list .game-card .game .game-info:after {
+      content: "";
+      display: table;
+      clear: both; }
+
+footer {
+  background-color: #282C35;
+  color: white;
+  font-size: 0.8em;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000; }
+  footer p {
+    text-align: center;
+    line-height: 2em; }
+
+/**
+ * Style settings to define colors, sizes, fonts and others
+ */
+
+/**
+ * Import required settings and mixins from other config scss files
+ */
+/**
+ * Style settings to define colors, sizes, fonts and others
+ */
+/**
+ * Styles for reusable UI components (ex. buttons)
+ */
+.button {
+  font-size: 12px;
+  background-color: #00A8F2;
+  color: white;
+  display: block;
+  border-radius: 2px;
+  border: none;
+  margin: 10px;
+  padding: 10px;
+  outline: none;
+  text-decoration: none; }
